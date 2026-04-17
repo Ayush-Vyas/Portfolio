@@ -1351,3 +1351,31 @@ header .logo {
 .linkedin { background: #0077b5; }
 .github { background: #333; }
 .twitter { background: #1da1f2; }
+
+.cert-box a {
+  display: block;
+  outline: none;
+}
+
+.cert-box a:focus,
+.cert-box a:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.cert-box a img {
+  border: none;
+  display: block;
+}
+
+.cert-box a {
+  -webkit-tap-highlight-color: transparent; /* mobile fix */
+}
+
+.cert-box {
+  transition: 0.3s;
+}
+
+.cert-box:hover {
+  transform: translateY(-8px);
+}
