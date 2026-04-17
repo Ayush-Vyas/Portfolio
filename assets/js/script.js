@@ -38,22 +38,23 @@ $(document).ready(function () {
     });
 
     // emailjs
-    emailjs.init("A4QcZTNfGENg4icjF"); // your public key
+    emailjs.init("A4QcZTNfGENg4icjF");
 
-$("#contact-form").submit(function (event) {
+document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     emailjs.sendForm(
-        'service_izhkonw',     // 🔁 replace with your real service ID
-        'template_sfpm4de',     // 🔁 replace with your real template ID
-        '#contact-form'
+        "service_izhkonw",
+        "template_sfpm4de",
+        this
     )
-    .then(() => {
+    .then(function () {
+        alert("Message Sent Successfully!");
         document.getElementById("contact-form").reset();
-        alert("Form Submitted Successfully");
     })
-    .catch(() => {
-        alert("Form Submission Failed!");
+    .catch(function (error) {
+        console.error(error);
+        alert("Failed to send message!");
     });
 });
 
