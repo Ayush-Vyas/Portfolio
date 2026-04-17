@@ -1333,3 +1333,41 @@ header .logo {
   font-weight: 800;
   letter-spacing: 1px;
 }
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.social-card i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Hover effect */
+.social-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Colors */
+.instagram { background: linear-gradient(45deg, #f09433, #dc2743); }
+.linkedin { background: #0077b5; }
+.github { background: #333; }
+.twitter { background: #1da1f2; }
