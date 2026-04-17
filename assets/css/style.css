@@ -1379,3 +1379,12 @@ header .logo {
 .cert-box:hover {
   transform: translateY(-8px);
 }
+
+.cert-box a {
+  display: block;
+  line-height: 0; /* 🔥 removes bottom gap */
+}
+
+.cert-box img {
+  display: block; /* 🔥 very important */
+}
