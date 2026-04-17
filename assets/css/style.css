@@ -1305,29 +1305,6 @@ form .button-area {
   transform: scale(1.05);
 }
 
-.whatsapp-btn {
-  position: fixed;
-  left: 20px;   /* 👈 moved to left */
-  bottom: 20px;
-  background: #25D366;
-  color: white;
-  font-size: 22px;
-  padding: 15px 18px;
-  border-radius: 50%;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-}
-.whatsapp-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 header .logo {
   font-size: 2rem;
   font-weight: 800;
@@ -1367,6 +1344,9 @@ header .logo {
 }
 
 /* Colors */
+.whatsapp {
+  background: #25D366;
+}
 .instagram { background: linear-gradient(45deg, #f09433, #dc2743); }
 .linkedin { background: #0077b5; }
 .github { background: #333; }
