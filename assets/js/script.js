@@ -37,38 +37,6 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
-    // <!-- emailjs to mail contact form data -->// ===== EMAILJS CONTACT FORM FIX =====
-
-$(document).ready(function () {
-
-    emailjs.init("A4QcZTNfGENg4icjF");
-
-    // Use delegated event (works 100% even if timing issues)
-    $(document).on("submit", "#contact-form", function (event) {
-
-        event.preventDefault();
-
-        console.log("FORM INTERCEPTED");
-
-        emailjs.sendForm(
-            'service_izhkonw',
-            'template_sfpm4de',
-            this   // IMPORTANT: use 'this' not '#contact-form'
-        )
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            $("#contact-form")[0].reset();
-            alert("Form Submitted Successfully");
-        })
-        .catch(function (error) {
-            console.error('FAILED...', error);
-            alert("Form Submission Failed! Try Again");
-        });
-
-    });
-
-});
-
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
