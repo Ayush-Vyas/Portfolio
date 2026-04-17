@@ -38,20 +38,23 @@ $(document).ready(function () {
     });
 
     // emailjs
-    $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+    emailjs.init("A4QcZTNfGENg4icjF"); // your public key
 
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function () {
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function () {
-                alert("Form Submission Failed! Try Again");
-            });
+$("#contact-form").submit(function (event) {
+    event.preventDefault();
 
-        event.preventDefault();
+    emailjs.sendForm(
+        'service_izhkonw',     // 🔁 replace with your real service ID
+        'template_sfpm4de',     // 🔁 replace with your real template ID
+        '#contact-form'
+    )
+    .then(() => {
+        document.getElementById("contact-form").reset();
+        alert("Form Submitted Successfully");
+    })
+    .catch(() => {
+        alert("Form Submission Failed!");
     });
-
 });
 
 // tab visibility change
