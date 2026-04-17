@@ -1,3 +1,4 @@
+// ================= NAVBAR =================
 $(document).ready(function () {
 
     $('#menu').click(function () {
@@ -29,26 +30,17 @@ $(document).ready(function () {
         });
     });
 
-    // smooth scrolling
+    // smooth scroll
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear');
+        }, 500);
     });
-    
-// tab visibility change
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === "visible") {
-        document.title = "Portfolio | Ayush Vyas";
-        $("#favicon").attr("href", "assets/images/favicon.png");
-    } else {
-        document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href", "assets/images/favhand.png");
-    }
+
 });
 
-// typed.js
+// ================= TYPED JS =================
 var typed = new Typed(".typing-text", {
     strings: ["web development", "cloud computing"],
     loop: true,
@@ -57,12 +49,12 @@ var typed = new Typed(".typing-text", {
     backDelay: 500,
 });
 
-// tilt effect
+// ================= TILT =================
 VanillaTilt.init(document.querySelectorAll(".tilt"), {
     max: 15,
 });
 
-// scroll reveal
+// ================= SCROLL REVEAL =================
 const srtop = ScrollReveal({
     origin: 'top',
     distance: '80px',
@@ -70,46 +62,17 @@ const srtop = ScrollReveal({
     reset: true
 });
 
-// home
 srtop.reveal('.home .content h3', { delay: 200 });
 srtop.reveal('.home .content p', { delay: 200 });
 srtop.reveal('.home .content .btn', { delay: 200 });
 srtop.reveal('.home .image', { delay: 400 });
-
-// about
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-
-// skills
 srtop.reveal('.skills .container', { interval: 200 });
-
-// education
-srtop.reveal('.education .box', { interval: 200 });
-
-// projects
 srtop.reveal('.work .box', { interval: 200 });
 
-// experience
-srtop.reveal('.experience .timeline', { delay: 400 });
-
-// contact
-srtop.reveal('.contact .container', { delay: 400 });
-
-// disable inspect (optional)
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-};
-
-// ===== CONTACT FORM EMAILJS FIX =====
-
+// ================= EMAILJS CONTACT FORM =================
 window.addEventListener("load", function () {
 
-    console.log("EMAILJS SCRIPT RUNNING");
+    console.log("EMAILJS LOADED");
 
     emailjs.init("A4QcZTNfGENg4icjF");
 
