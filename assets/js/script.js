@@ -40,12 +40,21 @@ $(document).ready(function () {
     // emailjs
 window.addEventListener("DOMContentLoaded", function () {
 
+    console.log("JS LOADED");
+
     emailjs.init("A4QcZTNfGENg4icjF");
 
     const form = document.getElementById("contact-form");
 
+    if (!form) {
+        console.error("Form not found");
+        return;
+    }
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        console.log("Form submit intercepted");
 
         emailjs.sendForm(
             "service_izhkonw",
