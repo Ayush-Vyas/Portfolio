@@ -36,42 +36,7 @@ $(document).ready(function () {
             scrollTop: $($(this).attr('href')).offset().top,
         }, 500, 'linear');
     });
-
-    // emailjs
-window.addEventListener("DOMContentLoaded", function () {
-
-    console.log("JS LOADED");
-
-    emailjs.init("A4QcZTNfGENg4icjF");
-
-    const form = document.getElementById("contact-form");
-
-    if (!form) {
-        console.error("Form not found");
-        return;
-    }
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        console.log("Form submit intercepted");
-
-        emailjs.sendForm(
-            "service_izhkonw",
-            "template_sfpm4de",
-            this
-        )
-        .then(() => {
-            alert("Message Sent Successfully!");
-            form.reset();
-        })
-        .catch((error) => {
-            console.error(error);
-            alert("Failed to send message!");
-        });
-    });
-
-});
+    
 // tab visibility change
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
@@ -139,3 +104,40 @@ document.onkeydown = function (e) {
     if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
 };
+
+// ===== CONTACT FORM EMAILJS FIX =====
+
+window.addEventListener("load", function () {
+
+    console.log("EMAILJS SCRIPT RUNNING");
+
+    emailjs.init("A4QcZTNfGENg4icjF");
+
+    const form = document.getElementById("contact-form");
+
+    if (!form) {
+        console.error("Form not found");
+        return;
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        console.log("FORM INTERCEPTED");
+
+        emailjs.sendForm(
+            "service_izhkonw",
+            "template_sfpm4de",
+            this
+        )
+        .then(() => {
+            alert("Message Sent Successfully!");
+            form.reset();
+        })
+        .catch((error) => {
+            console.error(error);
+            alert("Failed to send message!");
+        });
+    });
+
+});
