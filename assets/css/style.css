@@ -1352,57 +1352,29 @@ header .logo {
 .github { background: #333; }
 .twitter { background: #1da1f2; }
 
-.cert-box a {
-  display: block;
-  outline: none;
-}
-
-.cert-box a:focus,
-.cert-box a:active {
-  outline: none;
-  box-shadow: none;
-}
-
-.cert-box a img {
-  border: none;
-  display: block;
-}
 
 .cert-box a {
-  -webkit-tap-highlight-color: transparent; /* mobile fix */
+  display: block;
+  text-decoration: none;
+  line-height: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
+.cert-box img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Hover effect */
 .cert-box {
   transition: 0.3s;
 }
-
 .cert-box:hover {
   transform: translateY(-8px);
 }
 
-.cert-box a {
-  display: block;
-  line-height: 0; /* 🔥 removes bottom gap */
-}
-
-.cert-box img {
-  display: block; /* 🔥 very important */
-}
-
-/* FIX: Remove blue line under LinkedIn certificates */
-.cert-box a {
-  text-decoration: none !important;
-  border: none !important;
-}
-
-.cert-box a img {
-  display: block; /* removes inline gap */
-}
-
-.cert-box.linkedin a:focus,
-.cert-box.linkedin a:active,
-.cert-box.linkedin a:hover {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none !important;
+/* 🔥 Actual fix */
+.cert-box.linkedin {
+  background: transparent !important;
 }
