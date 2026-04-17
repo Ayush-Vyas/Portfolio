@@ -70,28 +70,23 @@ srtop.reveal('.skills .container', { interval: 200 });
 srtop.reveal('.work .box', { interval: 200 });
 
 // ================= EMAILJS CONTACT FORM =================
-window.addEventListener("load", function () {
+document.addEventListener("submit", function (event) {
 
-    console.log("EMAILJS LOADED");
+    const form = event.target;
 
-    emailjs.init("A4QcZTNfGENg4icjF");
+    // check if it's your contact form
+    if (form.id === "contact-form") {
 
-    const form = document.getElementById("contact-form");
-
-    if (!form) {
-        console.error("Form not found");
-        return;
-    }
-
-    form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        console.log("FORM INTERCEPTED");
+        console.log("FORM CAUGHT SUCCESSFULLY");
+
+        emailjs.init("A4QcZTNfGENg4icjF");
 
         emailjs.sendForm(
             "service_izhkonw",
             "template_sfpm4de",
-            this
+            form
         )
         .then(() => {
             alert("Message Sent Successfully!");
@@ -101,6 +96,6 @@ window.addEventListener("load", function () {
             console.error(error);
             alert("Failed to send message!");
         });
-    });
+    }
 
 });
