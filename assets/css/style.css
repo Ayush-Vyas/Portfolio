@@ -1388,3 +1388,21 @@ header .logo {
 .cert-box img {
   display: block; /* 🔥 very important */
 }
+
+/* FIX: Remove blue line under LinkedIn certificates */
+.cert-box a {
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.cert-box a img {
+  display: block; /* removes inline gap */
+}
+
+.cert-box.linkedin a:focus,
+.cert-box.linkedin a:active,
+.cert-box.linkedin a:hover {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
