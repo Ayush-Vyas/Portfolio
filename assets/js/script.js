@@ -38,26 +38,31 @@ $(document).ready(function () {
     });
 
     // emailjs
+window.addEventListener("DOMContentLoaded", function () {
+
     emailjs.init("A4QcZTNfGENg4icjF");
 
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();
+    const form = document.getElementById("contact-form");
 
-    emailjs.sendForm(
-        "service_izhkonw",
-        "template_sfpm4de",
-        this
-    )
-    .then(function () {
-        alert("Message Sent Successfully!");
-        document.getElementById("contact-form").reset();
-    })
-    .catch(function (error) {
-        console.error(error);
-        alert("Failed to send message!");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        emailjs.sendForm(
+            "service_izhkonw",
+            "template_sfpm4de",
+            this
+        )
+        .then(() => {
+            alert("Message Sent Successfully!");
+            form.reset();
+        })
+        .catch((error) => {
+            console.error(error);
+            alert("Failed to send message!");
+        });
     });
-});
 
+});
 // tab visibility change
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
